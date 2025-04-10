@@ -3,9 +3,7 @@ node {
     stage('Clone repository') {
         checkout scm
     }
-    stage('Build image') {
-       app = docker.build("anastasijalalkova/kiii-jenkins")
-    }
+
     if (env.BRANCH_NAME == 'dev') {
 
         stage('Build image') {
